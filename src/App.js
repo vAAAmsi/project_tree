@@ -1,24 +1,39 @@
-import logo from './logo.svg';
+
+import Dashboard from './dashboard';
 import './App.css';
+import NavBar from './nav';
+import ViewTree from './frame1';
+import AddTree from './frame2';
+import { Routes,Route } from 'react-router-dom';
+import LoginPage from './pages/login';
+import ForgotPasswordPage from './pages/forgetpassword'
+import NewPassword from './components/templates/Auth/NewPassword/NewPassword';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <div>
+      {/* <NavBar/> */}
+    <Routes>
+      <Route path='/' element={<LoginPage/>}></Route> 
+      <Route path='/login' element={<LoginPage/>}></Route> 
+      <Route path='/dashboard' element={<Dashboard/>}></Route>
+      <Route path='/view' element={<ViewTree/>} > </Route>
+      <Route path='/addtree' element={<AddTree/>} > </Route>
+      <Route path='/forgotpassword'   element={<ForgotPasswordPage/>} ></Route>
+      <Route path='/newpassword'   element={<NewPassword/>} ></Route>
+    </Routes>
+  </div>
+      // <div>
+        
+      //  <NavBar></NavBar>
+      //  {/* <ViewTree/> */}
+      // {/* <Dashboard></Dashboard> */}
+      // <AddTree/>
+      // </div>
+       
+      
+    
   );
 }
 
