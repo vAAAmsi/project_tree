@@ -1,0 +1,89 @@
+.treeadding{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 44px;
+}
+.treedoc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.treedoc1{
+    margin-top: 10px;
+    border: 2px solid black;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 65px;
+    cursor: pointer;
+
+}
+.r{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.r1{
+    width: 80%;
+    height: auto;
+}
+.name{
+    font-size: 32px;
+    width: 90%;
+
+} 
+.text{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.inputcontainer{
+    width: 100%;
+    height: 40px ;
+}
+.descText{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+.descText1{
+    
+    width: 80%;
+    height: auto;
+}
+.text1{
+    font-size: 32px;
+}
+.descEnter{
+    
+    width: 500px;
+    height: 150px;
+    border-radius: 10px;
+}
+.text2{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.submitButton{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* @media screen and (max-width : '400px') {
+    .text{
+        margin-left: 200px;
+    }
+} */

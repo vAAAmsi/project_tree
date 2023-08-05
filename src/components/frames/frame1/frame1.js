@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import NavBar from './nav';
-import UiButton from './components/UiCore/FormComponent/UiButton/UiButton'
+import './frame1.css'
+import NavBar from '../../../navbar/nav';
+import UiButton from '../../UiCore/FormComponent/UiButton/UiButton'
 import ReactToPrint from 'react-to-print';
 import { Download } from '@mui/icons-material';
+import { Button } from '@mui/material';
 function ViewTree(){
     let location = useLocation();
     var[data,setData]=useState(location.state)
-
 
     const handleDownload=()=>{
         console.log("hquwansm")
@@ -16,13 +17,20 @@ function ViewTree(){
         <div>
             <NavBar/>
            <div>
+           
            <div  className='download'>
+            <div></div>
+           {/* <div className="neem">{data.TreeName}</div> */}
            <ReactToPrint
             documentTitle={data.TreeName}
             content={() => document.getElementById("download-content")}
+         
             trigger={() =><UiButton  text="Download"  onClick={handleDownload} startIcon={(<Download/>)} > </UiButton> }
+            
           />
-              {/* <UiButton  text="Download"  onClick={handleDownload} startIcon={(<Download/>)} > </UiButton> */}
+         
+          
+              
            </div>
           <div id='download-content' >
           <div className="neem">{data.TreeName}</div>
@@ -35,7 +43,6 @@ function ViewTree(){
                 <div className="des1">
                     <div className="des2" >Description:</div>
                     <p>{data.description}</p>
-
                 </div>
             </div>
           </div>

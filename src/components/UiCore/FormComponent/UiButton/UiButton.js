@@ -4,7 +4,7 @@ import React from "react";
 import styles from "./UiButton.module.css";
 const UiButton= (props) => {
   return (
-    <Button   variant="contained" {...props} className={props.className} style={{
+    <Button type={props.type}  variant="contained" {...props} className={props.className} style={{
       backgroundColor:'#6EFA6B',
       color: "#FF0606",
     }}  >
@@ -13,8 +13,3 @@ const UiButton= (props) => {
   );
 };
 export default UiButton
-// background-color: #6EFA6B ;
-// color: #FF0606;
-// font-size: 18px;
-// cursor: pointer;
-// border: none;

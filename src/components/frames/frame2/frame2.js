@@ -1,14 +1,15 @@
 import { collection, getDocs } from "firebase/firestore";
-import db from "./firebase/db";
+import './frame2.css'
+import db from "../../../firebase/db";
 import { doc, setDoc } from "firebase/firestore";
 import { useState } from "react";
 import { upload } from "@testing-library/user-event/dist/upload";
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
-import storage from "./firebase/storage";
+import storage from "../../../firebase/storage";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-import UiButton from "./components/UiCore/FormComponent/UiButton/UiButton";
-import NavBar from "./nav";
+import UiButton from "../../UiCore/FormComponent/UiButton/UiButton";
+import NavBar from "../../../navbar/nav";
 import {TextField} from '@mui/material'
  function AddTree(){
     const navigate=useNavigate();
@@ -30,7 +31,6 @@ import {TextField} from '@mui/material'
                 icon: 'success',
                 title: 'Success',
                 text: 'Successsfully added the data',
-                // footer: '<a href="">Why do I have this issue?</a>'
             }
           )
       navigate('/dashboard')
@@ -39,9 +39,7 @@ import {TextField} from '@mui/material'
             await  Swal.fire(
                 {
                     icon: 'error',
-                    // title: 'Oops...',
                     text: 'Something went wrong',
-                    // footer: '<a href="">Why do I have this issue?</a>'
                 })
         }
         console.log("added successfuly")
@@ -52,13 +50,8 @@ import {TextField} from '@mui/material'
       }
   const handleFileChange=(e)=>{
      const file = e.target.files[0]
-   
-    //  if (!file) return;
-    //  console.log("files is",file)
-
     const storageRef = ref(storage, `files/${file.name}`);
     const uploadTask = uploadBytesResumable(storageRef, file);
-//    console.log("helllllllllllo statr chnaged")
     uploadTask.on("state_changed",
       (snapshot) => {
         const progress =
@@ -80,7 +73,8 @@ import {TextField} from '@mui/material'
     return(
         <div>
             <NavBar/>
-            <div className="treeadding">ADD TREE</div>
+              <form>
+              <div className="treeadding">ADD A TREE</div>
             <div className="treedoc ">
             <div  onClick={imageOnclick}>
                 {
@@ -97,10 +91,13 @@ import {TextField} from '@mui/material'
                 </div>
             </div>
             
-            <input onChange={handleFileChange} id="upload" style={{display:'none'}} type="file"  accept="image/*" ></input>
+            <input onChange={handleFileChange} id="upload" style={{display:'none'}} type="file" required  accept="image/*" ></input>
             <div className="text">
                 <div className="text1">
-                    <TextField label={"Tree Name"} className="inputcontainer" onChange={(e)=>{setTreename(e.target.value)}}  placeholder="Enter The Name Of The Tree"></TextField>
+                    <TextField label="Tree Name" className="inputcontainer" 
+                    onChange={(e)=>{setTreename(e.target.value)}} required
+                    style={{width:'100%'}}
+                      ></TextField>
                 </div>
 
             </div>
@@ -108,23 +105,20 @@ import {TextField} from '@mui/material'
                 <div className="descText1">
                     <div className="text1">Description:</div>
                     <div className="text2">
-                        {/* <input placeholder="Enter Description" className="descEnter"></input> */}
-                        {/* <textarea placeholder="Enter Description"   onChange={(e)=>{setDescription(e.target.value)}}  name="Text1" cols="40"className="descEnter" rows="5"></textarea> */}
-                        <TextField
+                        <TextField required
                   id="outlined-multiline-static"
                   label="Description"
                   multiline
                   rows={4}
-                  defaultValue="Default Value"
-                  placeholder="Enter Description"   onChange={(e)=>{setDescription(e.target.value)}}  name="Text1" cols="40"className="descEnter" rows="5"
+                  placeholder="Enter Description"   onChange={(e)=>{setDescription(e.target.value)}}  name="Text1" cols="40"className="descEnter" 
                     />
                         </div>
                 </div>
             </div>
             <div className="submitButton">
                 <UiButton   onClick={handleclick} text="Submit" ></UiButton>
-                {/* <button onClick={handleclick} className="button">Submit</button> */}
             </div>
+              </form>
         </div>
     )
 }

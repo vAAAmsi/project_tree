@@ -1,0 +1,41 @@
+.download{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+
+.neem{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 44px;
+}
+.treeF1{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    height: 320px;
+}
+.mainT{
+    height: auto;
+    width: auto;
+}
+.des{
+    display: flex;
+    justify-content: center;
+    height: auto;
+    width: auto;
+}
+.des1{
+    width: 90%;
+    height: auto;
+}
+
+.des2{
+    font-size: 22px;
+}
+
+.frame1-image{
+    background: transparent;
+}
+

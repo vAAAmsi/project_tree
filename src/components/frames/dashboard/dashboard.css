@@ -1,0 +1,43 @@
+.SB{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 40px;margin-top: 20px;
+    
+}
+.SB1{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    width: 90%;
+    /* height: 40px; */
+    gap: 20px;
+}
+.piccon{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap ;
+   padding: 20px;
+   justify-content: center;
+}
+.pic1 {
+   width: 350px;
+   height: 300px;
+   border: 4px solid black;
+   border-radius: 2%;
+   cursor: pointer;
+}
+.pic1:hover{
+   box-shadow: 3px 3px 30px green ;
+
+}
+
+.Image1{
+    width: 350px;
+    height: 250px;
+}
+.names{
+    text-align: center;
+    font-size: 32px;
+  
+}

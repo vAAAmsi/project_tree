@@ -11,7 +11,8 @@ import Form from "../../../UiCore/FormComponent/FormFeild/FormFeild";
 import InputFormFeild from "../../../UiCore/FormComponent/InputFormFeild/InputFormFeild";
 import CheckBoxFeild from "../../../UiCore/FormComponent/CheckBoxFeild/CheckBoxFeild";
 import UiButton from "../../../UiCore/FormComponent/UiButton/UiButton";
-const Login = () => {
+const Login = (props) => {
+  console.log("props is",props.data)
   const navigate=useNavigate();
   const onSubmit = (data) => {
     console.log("data is", data);
